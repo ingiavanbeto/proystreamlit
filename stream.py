@@ -1,5 +1,5 @@
 import streamlit as st
-import pymysql
+#import pymysql
 import pandas as pd
 import plotly.express as px
 import time
@@ -47,7 +47,7 @@ st.button("Rerun")
 st.title("📊 Dashboard de Monitoreo")
 st.write("Esta aplicación muestra los datos de la tabla **monitoreo** en una gráfica interactiva.")
 # Obtener datos de la base de datos
-df,d2 = obtener_datos()
+#df,d2 = obtener_datos()
 #st.metric(label="Temperatura Actual", value="70 °C", delta="0 °C")
 col1, col2 = st.columns(2)
 col1.metric("Temperatura Actual", str(d2.values[0][0]) + "°C", "1.2 °C")

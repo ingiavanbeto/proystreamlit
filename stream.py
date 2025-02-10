@@ -1,7 +1,7 @@
 import streamlit as st
 #import pymysql
 import pandas as pd
-import plotly.express as px
+#import plotly.express as px
 import time
 import numpy as np
 import altair as alt
@@ -47,43 +47,6 @@ st.button("Rerun")
 st.title("📊 Dashboard de Monitoreo")
 st.write("Esta aplicación muestra los datos de la tabla **monitoreo** en una gráfica interactiva.")
 # Obtener datos de la base de datos
-#df,d2 = obtener_datos()
-#st.metric(label="Temperatura Actual", value="70 °C", delta="0 °C")
-col1, col2 = st.columns(2)
-col1.metric("Temperatura Actual", str(d2.values[0][0]) + "°C", "1.2 °C")
-col2.metric("Humidity", "86%", "4%")
-
-st.metric(label="Temperatura Actual", value=str(d2.values[0][0]) + "°C", delta="0 °C")
-if df is not None:
-    st.dataframe(df)  # Muestra los datos en una tabla interactiva
-    # Verifica que hay datos suficientes
-    if len(df) > 0:
-        # Asegúrate de que las columnas existen y son adecuadas para graficar
-        columnas_numericas = df.select_dtypes(include=['number']).columns.tolist()
-        if len(columnas_numericas) < 2:
-            st.warning("No hay suficientes columnas numéricas para graficar.")
-        else:
-            # Seleccionar columnas para la gráfica
-            x_col = st.selectbox("Selecciona el eje X", columnas_numericas, index=0)
-            y_col = st.selectbox("Selecciona el eje Y", columnas_numericas, index=1)
-            # Crear gráfico interactivo con Plotly
-            fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {y_col} vs {x_col}")
-            
-            st.plotly_chart(fig)
-    else:
-        st.warning("No hay datos disponibles en la tabla.")
-else:
-    st.error("No se pudieron obtener los datos.")
-
-df = pd.DataFrame(np.random.randn(200, 3), columns=["a", "b", "c"])
-c = (
-    alt.Chart(df)
-    .mark_circle()
-    .encode(x="a", y="b", size="c", color="c", tooltip=["a", "b", "c"])
-)
-
-st.write(c)
-
 _LOREM_IPSUM = """
 Lorem ipsum dolor sit amet, **consectetur adipiscing** elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

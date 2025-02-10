@@ -5,7 +5,7 @@ import pandas as pd
 import time
 import numpy as np
 import altair as alt
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 # Configuración de la conexión a MySQL
 def obtener_datos():

@@ -73,10 +73,10 @@ if st.button("Stream data"):
     st.write_stream(stream_data)
 
 arr = np.random.normal(1, 1, size=100)
-fig, ax = plt.subplots()
+#fig, ax = plt.subplots()
 ax.hist(arr, bins=20)
 
-fig
+#fig
 
 st.write("This is some text.")
 
